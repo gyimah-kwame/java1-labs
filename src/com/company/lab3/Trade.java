@@ -13,8 +13,26 @@ public class Trade {
         this.price = price;
     }
 
-    public void setPrice(double price) {
+    public Trade(String id, String symbol, int quantity) {
+        this.id = id;
+        this.symbol = symbol;
+        this.quantity = quantity;
+    }
 
+    public void setPrice(double price) {
+        this.price = Math.abs(price);
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     @Override
