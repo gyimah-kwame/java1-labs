@@ -1,6 +1,9 @@
 package com.company;
 
+import com.company.exceptions.TradeIDException;
 import com.company.lab1.*;
+import com.company.lab3.MyStack;
+import com.company.lab3.Trade;
 
 public class Lab {
 
@@ -31,5 +34,48 @@ public class Lab {
         Question6.generateNumbers();
 
         Question6.generateNumbers(49);
+
+        try {
+            new Trade("1", "aa", 1, 1);
+            new Trade("2", "aa", 2, 4);
+        }catch (TradeIDException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
+
+        MyStack<Integer> myStack = new MyStack<>();
+
+        myStack.push(1);
+        myStack.push(2);
+
+        System.out.println("size of stack "+myStack.size());
+
+        System.out.println(myStack);
+        System.out.println("top of stack "+ myStack.top());
+
+        myStack.pop();
+
+        System.out.println(myStack);
+        System.out.println("top of stack "+ myStack.top());
+
+        System.out.println("size of stack "+myStack.size());
+
+        System.out.println();
+
+        try {
+            Trade trade = new Trade("10", "", 1);
+
+            System.out.println("trade "+trade.getPrice());
+
+        }catch (TradeIDException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+
+
+
     }
 }
