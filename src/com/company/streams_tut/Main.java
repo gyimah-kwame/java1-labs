@@ -13,11 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Optional<Trade1> trade = Optional.of(new Trade1("", "", "", 1, 1));
-
-
-
-
         try {
             List<String> lines = readFile("C:\\Users\\User\\Documents\\Trades.txt");
 
